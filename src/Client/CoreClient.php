@@ -53,7 +53,7 @@ class CoreClient extends ApiClient
         $token = $cache->getObject('token', Token::class)
             ?? $this->createToken();
 
-        if ($token->expiresIn < time()) {
+        if ($token->createdOn + $token->expiresIn < time()) {
             $token = $this->refreshToken($token->refreshToken ?? throw new \RuntimeException());
         }
 

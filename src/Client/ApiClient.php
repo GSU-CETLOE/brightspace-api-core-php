@@ -37,11 +37,11 @@ class ApiClient extends BaseApiClient
 
 
     /**
-     * @return Config
+     * @return CoreClient
      */
-    protected function getCoreClient(): Config
+    protected function getCoreClient(): CoreClient
     {
-        return $this->config;
+        return $this->coreClient;
     }
 
 
