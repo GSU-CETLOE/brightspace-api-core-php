@@ -1,0 +1,7 @@
+parameters:
+        tmpDir: working/phpstan
+        level: 10
+        paths:
+                - bundle
+                - src
+                - tests

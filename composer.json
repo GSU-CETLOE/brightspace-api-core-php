@@ -1,0 +1,61 @@
+{
+  "name": "gsu-cetloe/brightspace-api-core-php",
+  "description": "Core client for the D2L Brightspace API: web login with multi-factor support, OAuth token handling, versioned API URL rewriting, and paging helpers, with a Symfony bundle",
+  "type": "library",
+  "keywords": [],
+  "homepage": "https://github.com/GSU-CETLOE/brightspace-api-core-php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jeb Barger",
+      "role": "Application Developer"
+    }
+  ],
+  "require": {
+    "php": "8.1.*",
+    "gsu-cetloe/gadget-console-php": "^1.0",
+    "gsu-cetloe/gadget-http-php": "^1.0",
+    "gsu-cetloe/gadget-oauth-php": "^1.0",
+    "gsu-cetloe/symfony-bundle": "^1.0"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.0",
+    "phpstan/phpstan-strict-rules": "^2.0",
+    "phpstan/extension-installer": "^1.4",
+    "phpunit/phpunit": "^10.5",
+    "squizlabs/php_codesniffer": "^3.10",
+    "symfony/cache": "6.4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Brightspace\\Api\\Core\\": ["src/", "bundle/"]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Brightspace\\Api\\Core\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "phpstan/extension-installer": true,
+      "php-http/discovery": true
+    },
+    "platform": {
+      "php": "8.1.0"
+    },
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "apcu-autoloader": true
+  },
+  "scripts": {
+    "phpcs": "vendor/bin/phpcs",
+    "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon",
+    "test": "vendor/bin/phpunit",
+    "check": [
+      "@phpcs",
+      "@phpstan",
+      "@test"
+    ]
+  }
+}

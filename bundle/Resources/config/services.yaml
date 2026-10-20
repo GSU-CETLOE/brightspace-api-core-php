@@ -1,0 +1,19 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Brightspace\Api\Core\:
+    resource: "../../../src/"
+
+  Brightspace\Api\Core\Config:
+    arguments:
+      $d2lHost: "%env(string:default::D2L_HOST)%"
+      $rootOrgUnit: "%env(int:default::D2L_ROOT_ORGUNIT)%"
+      $clientId: "%env(string:default::D2L_CLIENT_ID)%"
+      $clientSecret: "%env(string:default::D2L_CLIENT_SECRET)%"
+      $redirectUri: "%env(string:default::D2L_REDIRECT_URI)%"
+      $scope: "%env(string:default::D2L_SCOPE)%"
+      $username: "%env(string:default::D2L_USERNAME)%"
+      $password: "%env(string:default::D2L_PASSWORD)%"
+      $mfa: "%env(string:default::D2L_MFA_KEY)%"
